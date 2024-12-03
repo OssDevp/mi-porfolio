@@ -1,0 +1,25 @@
+---
+const links = [
+  { label: "inicio", title: "Inicio", href: "/" },
+  { label: "proyectos", title: "Proyectos", href: "/#projects" },
+  { label: "habilidades", title: "Habilidades", href: "/#skill" },
+  { label: "sobre-mi", title: "Sobre Mi", href: "/#about" },
+];
+---
+
+<header class="flex justify-between py-5">
+  <div>BOSV</div>
+  <div class="flex gap-3">
+    {
+      links.map((link) => (
+        <a
+          class="text-[#7a7672] hover:text-[#080700] transition-colors"
+          aria-label=`${link.label}`
+          href=`${link.href}`
+        >
+          {link.title}
+        </a>
+      ))
+    }
+  </div>
+</header>
