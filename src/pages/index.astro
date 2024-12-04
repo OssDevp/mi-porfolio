@@ -1,14 +1,38 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
 import Text from "@/components/Text.astro";
 import ImageProfile from "@/components/ImageProfile.astro";
+import Divider from "@/components/Divider.astro";
+import Projects from "@/assets/icons/Projects.astro";
+import About from "@/assets/icons/About.astro";
+import CardProject from "@/components/CardProject.astro";
+import Typescript from "@/assets/icons/Typescript.astro";
+import Tools from "@/assets/icons/Tools.astro";
 ---
 
 <Layout title="bosv - Desarrollador Web">
-	<section class="grid grid-cols-2 gap-5 my-20">
-		<Text />
+	<section class="grid grid-cols-2 gap-5 my-20 p-5">
 		<ImageProfile />
+		<Text />
 	</section>
-	<main></main>
+	<Divider>
+		<Tools />
+		Habilidades
+	</Divider>
+	<section class="my-20"></section>
+	<Divider>
+		<Projects />
+		Proyectos
+	</Divider>
+	<main class="my-20 flex flex-row">
+		<CardProject title="Proyecto 1" description="Descripción del proyecto 1">
+			<Typescript class="size-6" />
+			Typescript
+		</CardProject>
+	</main>
+	<Divider>
+		<About />
+		Sobre Mi
+	</Divider>
+	<section class="my-20"></section>
 </Layout>

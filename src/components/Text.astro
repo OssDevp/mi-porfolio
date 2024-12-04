@@ -1,16 +1,30 @@
 ---
-import Button from "./Button.astro";
+import Badges from "./Badges.astro";
+import Github from "@/assets/icons/Github.astro";
+import Linkedin from "@/assets/icons/Linkedin.astro";
 ---
 
-<div class="flex flex-col justify-center">
-  <h1 class="text-4xl font-bold mb-3">Hola, soy Osvaldo Bareiro</h1>
-  <p class="text-[#7a7672]">
-    Soy un desarrollador web que disfruta de crear cosas en la web.
-  </p>
-  <p class="text-[#7a7672]">
-    Me gusta aprender cosas nuevas y compartir lo que sé.
-  </p>
-  <p class="text-[#7a7672]">
-    Si tienes un proyecto en mente, no dudes en contactarme.
-  </p>
+<div class="grid grid-row-col">
+  <div class="flex flex-col justify-end">
+    <h1 class="text-4xl text-primary font-bold mb-5">
+      Hey, soy <span class="text-secondary">Osvaldo Bareiro</span>
+    </h1>
+  </div>
+  <div class="text-xl">
+    <p class="text-tertiary">
+      Me apasiona el desarrollo de software, tanto en el frontend como en el
+      backend, y disfruto explorando nuevas tecnologías y herramientas que me
+      permitan crecer como desarrollador.
+    </p>
+  </div>
+  <nav>
+    <Badges>
+      <Github class="size-5" />
+      Github
+    </Badges>
+    <Badges>
+      <Linkedin class="size-5" />
+      Linkedin
+    </Badges>
+  </nav>
 </div>

@@ -1,10 +1,9 @@
 ---
 import Header from "@/components/Header.astro";
-import Background from "@/components/Background.astro";
 import Footer from "@/components/Footer.astro";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -12,87 +11,78 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Background />
-		<div class="max-w-5xl mx-auto">
-			<Header />
-			<slot />
-			<Footer />
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="relative">
+    <div
+      class="absolute top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+    <div class="max-w-5xl mx-auto">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <style>
-	/* roboto-latin-400-normal */
-	@font-face {
-		font-family: "Roboto";
-		font-style: normal;
-		font-display: swap;
-		font-weight: 400;
-		src:
-			url(https://cdn.jsdelivr.net/fontsource/fonts/roboto@latest/latin-400-normal.woff2)
-				format("woff2"),
-			url(https://cdn.jsdelivr.net/fontsource/fonts/roboto@latest/latin-400-normal.woff)
-				format("woff");
-		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-			U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122,
-			U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-	}
+  /* poppins-latin-300-normal */
+  @font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 300;
+    src:
+      url(https://cdn.jsdelivr.net/fontsource/fonts/poppins@latest/latin-300-normal.woff2)
+        format("woff2"),
+      url(https://cdn.jsdelivr.net/fontsource/fonts/poppins@latest/latin-300-normal.woff)
+        format("woff");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122,
+      U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
 
-	/* roboto-latin-700-normal */
-	@font-face {
-		font-family: "Roboto";
-		font-style: normal;
-		font-display: swap;
-		font-weight: 700;
-		src:
-			url(https://cdn.jsdelivr.net/fontsource/fonts/roboto@latest/latin-700-normal.woff2)
-				format("woff2"),
-			url(https://cdn.jsdelivr.net/fontsource/fonts/roboto@latest/latin-700-normal.woff)
-				format("woff");
-		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-			U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122,
-			U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-	}
+  /* poppins-latin-400-normal */
+  @font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src:
+      url(https://cdn.jsdelivr.net/fontsource/fonts/poppins@latest/latin-400-normal.woff2)
+        format("woff2"),
+      url(https://cdn.jsdelivr.net/fontsource/fonts/poppins@latest/latin-400-normal.woff)
+        format("woff");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122,
+      U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
 
-	/* roboto-flex-latin-wght-normal */
-	@font-face {
-		font-family: "Roboto Flex Variable";
-		font-style: normal;
-		font-display: swap;
-		font-weight: 100 1000;
-		src: url(https://cdn.jsdelivr.net/fontsource/fonts/roboto-flex:vf@latest/latin-wght-normal.woff2)
-			format("woff2-variations");
-		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-			U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122,
-			U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-	}
+  /* poppins-latin-700-normal */
+  @font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+    src:
+      url(https://cdn.jsdelivr.net/fontsource/fonts/poppins@latest/latin-700-normal.woff2)
+        format("woff2"),
+      url(https://cdn.jsdelivr.net/fontsource/fonts/poppins@latest/latin-700-normal.woff)
+        format("woff");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122,
+      U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
 
-	/* roboto-condensed-latin-wght-normal */
-	@font-face {
-		font-family: "Roboto Condensed Variable";
-		font-style: normal;
-		font-display: swap;
-		font-weight: 100 900;
-		src: url(https://cdn.jsdelivr.net/fontsource/fonts/roboto-condensed:vf@latest/latin-wght-normal.woff2)
-			format("woff2-variations");
-		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-			U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122,
-			U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-	}
-
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		font-family: "Roboto", sans-serif;
-	}
+  html,
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
 </style>
