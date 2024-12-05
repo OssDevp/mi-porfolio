@@ -2,6 +2,13 @@
 import Badges from "./Badges.astro";
 import Github from "@/assets/icons/Github.astro";
 import Linkedin from "@/assets/icons/Linkedin.astro";
+import Mail from "@/assets/icons/Mail.astro";
+
+const links = {
+  Github: "https://github.com/OssDevp",
+  Linkedin: "https://www.linkedin.com/in/osvaldobareirolugo/",
+  Mail: "",
+};
 ---
 
 <div class="grid grid-row-col">
@@ -10,7 +17,7 @@ import Linkedin from "@/assets/icons/Linkedin.astro";
       Hey, soy <span class="text-secondary">Osvaldo Bareiro</span>
     </h1>
   </div>
-  <div class="text-xl">
+  <div class="text-xl mb-6">
     <p class="text-tertiary">
       Me apasiona el desarrollo de software, tanto en el frontend como en el
       backend, y disfruto explorando nuevas tecnologías y herramientas que me
@@ -18,13 +25,17 @@ import Linkedin from "@/assets/icons/Linkedin.astro";
     </p>
   </div>
   <nav>
-    <Badges href="#github">
+    <Badges href={links.Github}>
       <Github class="size-5" />
       Github
     </Badges>
-    <Badges href="#linkedin">
+    <Badges href={links.Linkedin}>
       <Linkedin class="size-5" />
       Linkedin
+    </Badges>
+    <Badges href={links.Mail}>
+      <Mail class="size-5" />
+      osvaldojavierb4@gmail.com
     </Badges>
   </nav>
 </div>

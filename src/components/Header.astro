@@ -1,18 +1,18 @@
 ---
 const links = [
-  { label: "inicio", title: "Inicio", href: "/", class: "text-secondary" },
-  { label: "proyectos", title: "Proyectos", href: "/#projects" },
-  { label: "habilidades", title: "Habilidades", href: "/#skill" },
-  { label: "sobre-mi", title: "Sobre Mi", href: "/#about" },
+  { label: "inicio", title: "Inicio", href: "#" },
+  { label: "habilidades", title: "Habilidades", href: "#habilidades" },
+  { label: "proyectos", title: "Proyectos", href: "#projectos" },
+  { label: "sobre-mi", title: "Sobre Mi", href: "#sobre-mi" },
 ];
 ---
 
 <header class="sticky top-0 z-10 flex items-center justify-center py-5 px-5">
-  <nav id="nav" class="sticky top-0 z-10 flex gap-3 transition-all duration-200 py-1 px-1">
+  <nav id="nav" class="sticky top-0 z-10 flex gap-3 transition-all duration-200 py-2 px-5 bg-transparent">
     {
       links.map((link) => (
         <a
-          class="text-[#aaaa91] hover:text-secondary hover:scale-110 transition active:text-secondary"
+          class="text-[#aaaa91] hover:text-secondary hover:scale-110 transition active:text-secondary text-sm md:text-base"
           aria-label=`${link.label}`
           href=`${link.href}`
         >
@@ -24,44 +24,36 @@ const links = [
 </header>
 
 <script>
-
 const nav = document.getElementById("nav");
-const navItems = document.querySelectorAll("#nav a");
-const sections = document.querySelectorAll("section");
-
-const callback = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navItems.forEach((item) => {
-          if (item.getAttribute("aria-label") == entry.target.id) {
-            console.log(item)
-            item.classList.add("text-secondary", "scale-110");
-          } else {
-            item.classList.remove("text-secondary", "scale-110");
-          }
-        });
-      }
-    });
-  };
-  const observer = new IntersectionObserver(callback, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.3, // Detecta cuando el 30% de la sección está visible
-  });
-
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
-
 window.addEventListener("scroll", () => {
   console.log( )
   if (nav === null) return;
   if (window.scrollY > 10) {
-    nav.classList.remove("py-1", "px-1");
-    nav.classList.add("fixed", "top-2", "border","border-primary", "shadow-md", "py-2", "px-5", "rounded-md", "[backdrop-filter]", "backdrop-blur-lg", "transparency-5");
+    nav.classList.add("fixed", "bg-indigo-900", "top-2", "border","border-primary", "shadow-md", "py-2", "px-5", "rounded-md",  "[backdrop-filter]", "backdrop-blur-lg", "bg-transparent");
   } else {
-    nav.classList.remove("fixed", "top-2", "border", "border-primary", "shadow-md", "py-2", "px-5", "rounded-md", "[backdrop-filter]", "backdrop-blur-lg", "transparency-5");
-    nav.classList.add("py-1", "px-1");
+    nav.classList.remove("fixed", "top-2", "border", "border-primary", "shadow-md", "py-2", "px-5", "rounded-md",  "[backdrop-filter]", "backdrop-blur-lg", "transparency-5");
   }
 });
+
+// document.addEventListener('scroll', function() {
+//   const sections = document.querySelectorAll('section[id]') as NodeListOf<HTMLElement>
+//   const navLinks = document.querySelectorAll('nav a') as NodeListOf<HTMLElement>
+  
+//   let actual = '';
+//   sections.forEach( section => {
+//       const sectionTop = section.offsetTop
+//       const sectionHeight = section.clientHeight
+//       if(window.scrollY >= sectionTop - sectionHeight ) {
+//         console.log(window.scrollY)
+//         actual = section.id
+//       }
+//   })
+
+//   navLinks.forEach(link => {
+//       link.classList.remove('text-secondary', "font-bold")
+//       if(link.getAttribute('href') === '#' + actual) {
+//           link.classList.add('text-secondary', 'font-bold')
+//       }
+//   })
+// })
 </script>

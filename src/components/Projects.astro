@@ -1,0 +1,44 @@
+---
+import CardProject from "./CardProject.astro";
+import Typescript from "@/assets/icons/Typescript.astro";
+import Divider from "./Divider.astro";
+import ProjectsIcon from "@/assets/icons/Projects.astro";
+import Button from "./Button.astro";
+import React from "@/assets/icons/React.astro";
+import Node from "@/assets/icons/Node.astro";
+import Express from "@/assets/icons/Express.astro";
+import MongoDB from "@/assets/icons/MongoDB.astro";
+---
+
+<section id="proyectos">
+  <Divider>
+    <ProjectsIcon />
+    Proyectos
+  </Divider>
+
+  <div
+    class="mt-20 mb-10 grid grid-cols-1 px-4 gap-4 sm:grid-cols-2 md:grid-cols-3"
+  >
+    <CardProject
+      title="UpTask"
+      description="UpTask es una aplicacion para dev donde pueden monitorear sus proyectos y tareas. Ya sea con colaboradores o de manera individual."
+    >
+      <Typescript class="size-6" />
+      <React class="size-6" />
+      <Node class="size-6" />
+      <Express class="size-6" />
+      <MongoDB class="size-6" />
+    </CardProject>
+    <CardProject title="Proyecto 2" description="Descripción del proyecto 2">
+      <Typescript class="size-6" />
+      Typescript
+    </CardProject>
+    <CardProject title="Proyecto 2" description="Descripción del proyecto 2">
+      <Typescript class="size-6" />
+      Typescript
+    </CardProject>
+  </div>
+  <nav class="flex justify-center mb-20">
+    <Button href="/proyectos"> Ver más proyectos </Button>
+  </nav>
+</section>
