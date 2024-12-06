@@ -1,6 +1,7 @@
 ---
 import Divider from "./Divider.astro";
 import AboutIcon from "@/assets/icons/About.astro";
+import Button from "./Button.astro";
 ---
 
 <section id="sobre-mi">
@@ -9,12 +10,26 @@ import AboutIcon from "@/assets/icons/About.astro";
     Sobre Mi
   </Divider>
 
-  <div class="my-20 text-white">
-    <h2 class="text-3xl font-bold text-center">Sobre mí</h2>
-    <p class="text-center mt-5">
-      Soy un desarrollador web con experiencia en tecnologías como React,
-      Node.js y TypeScript. Me encanta aprender y compartir conocimientos con la
-      comunidad.
-    </p>
+  <div class="my-20 grid grid-cols-3">
+    <div
+      class="col-span-2 text-primary [&>p]:mb-4 [&>p>span]:text-secondary [&>p>span]:font-bold grid"
+    >
+      <p>
+        ¡Hola! Soy <span>Osvaldo Bareiro</span>, estudiante de Ingeniería en
+        Ciencias de la Computación y un apasionado por el desarrollo de
+        software. <span
+          >Disfruto del desarrollo web tanto del Front-End como del Back-End.</span
+        >
+      </p>
+      <p>
+        Mi meta es aportar soluciones creativas y eficientes, desarrollando
+        aplicaciones que combinen funcionalidad y diseño. En mis tiempos libres,
+        me gusta explorar nuevas tecnologías, mejorar mis habilidades y
+        sumergirme en retos de programación que despierten mi lado creativo.
+      </p>
+    </div>
+    <div class="w-auto">
+      <img src="/public/perfil.png" alt="Perfil" class="object-cover" />
+    </div>
   </div>
 </section>
