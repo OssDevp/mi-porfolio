@@ -4,37 +4,44 @@ import React from "@/assets/icons/React.astro";
 import Node from "@/assets/icons/Node.astro";
 import Express from "@/assets/icons/Express.astro";
 import MongoDB from "@/assets/icons/MongoDB.astro";
+import Button from "./Button.astro";
 
 const Projects = [
   {
-    title: "UpTask",
-    href: "/uptask.png",
+    title: "Proyecto 1",
+    href: "/proyecto.png",
     description:
-      "UpTask es una aplicacion para dev donde pueden monitorear sus proyectos y tareas. Ya sea con colaboradores o de manera individual.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc.",
     icons: [Typescript, React, Node, Express, MongoDB],
   },
   {
     title: "Proyecto 2",
-    href: "/uptask.png",
-    description: "Descripción del proyecto 2",
-    icons: [],
+    href: "/proyecto.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc.",
+    icons: [Typescript, React, Node, Express, MongoDB],
   },
   {
     title: "Proyecto 3",
-    href: "/uptask.png",
-    description: "Descripción del proyecto 3",
-    icons: [],
+    href: "/proyecto.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc.",
+    icons: [Typescript, React, Node, Express, MongoDB],
   },
 ];
 ---
 
 <div
   id="proyectos"
-  class="mt-20 mb-10 grid grid-cols-1 px-4 gap-4 sm:grid-cols-2 md:grid-cols-3"
+  class="mt-20 mb-20 grid grid-cols-1 px-4 gap-4 sm:grid-cols-2 md:grid-cols-3"
 >
   {
     Projects.map((project) => (
-      <article class="rounded-md border border-amber-100 p-4 hover:scale-105 transition-all duration-300">
+      <article class="relative rounded-md border border-amber-100 p-4">
+        <div class="absolute rounded-md top-0 left-0 w-full h-full bg-black/50 flex flex-col gap-5 justify-center items-center opacity-0 transition-all hover:opacity-100 duration-200">
+          <Button href="#">Ver Proyecto</Button>
+          <Button href="#">Ver Código</Button>
+        </div>
         <div class="min-w-40 overflow-hidden rounded-md">
           <img
             class="object-cover object-center"

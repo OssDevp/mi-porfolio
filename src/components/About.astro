@@ -10,26 +10,26 @@ import Button from "./Button.astro";
     Sobre Mi
   </Divider>
 
-  <div class="my-20 grid grid-cols-3">
+  <div class="mt-20 mb-10 grid grid-cols-1 sm:grid-cols-3">
     <div
-      class="col-span-2 text-primary [&>p]:mb-4 [&>p>span]:text-secondary [&>p>span]:font-bold grid"
+      class="col-span-2 text-primary [&>p>span]:text-secondary [&>p>span]:font-bold grid px-4"
     >
       <p>
         ¡Hola! Soy <span>Osvaldo Bareiro</span>, estudiante de Ingeniería en
         Ciencias de la Computación y un apasionado por el desarrollo de
         software. <span
           >Disfruto del desarrollo web tanto del Front-End como del Back-End.</span
-        >
-      </p>
-      <p>
-        Mi meta es aportar soluciones creativas y eficientes, desarrollando
-        aplicaciones que combinen funcionalidad y diseño. En mis tiempos libres,
-        me gusta explorar nuevas tecnologías, mejorar mis habilidades y
-        sumergirme en retos de programación que despierten mi lado creativo.
+        ><br /><br />
+        Mi meta es aportar soluciones creativas y eficientes, desarrollando aplicaciones
+        que combinen funcionalidad y diseño. En mis tiempos libres, me gusta explorar
+        nuevas tecnologías, mejorar mis habilidades y sumergirme en retos de programación
+        que despierten mi lado creativo.
       </p>
     </div>
-    <div class="w-auto">
-      <img src="/public/perfil.png" alt="Perfil" class="object-cover" />
+    <div
+      class="w-60 sm:w-auto flex flex-col justify-center items-center mx-auto row-start-1 sm:row-auto mb-5 sm:mb-0"
+    >
+      <img src="/perfil-punho.png" alt="Perfil" class="object-cover" />
     </div>
   </div>
 </section>

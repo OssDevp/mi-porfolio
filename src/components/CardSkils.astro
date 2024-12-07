@@ -1,0 +1,44 @@
+---
+import Tools from "@/assets/icons/Tools.astro";
+import FrontEnd from "@/assets/icons/FrontEnd.astro";
+import BackEnd from "@/assets/icons/BackEnd.astro";
+
+const skills = [
+  {
+    title: "Frontend",
+    icon: FrontEnd,
+    herramientas: [
+      "React",
+      "Typescript",
+      "Astro",
+      "Javascript",
+      "HTML",
+      "CSS",
+      "Tailwind",
+    ],
+  },
+  {
+    title: "Backend",
+    icon: BackEnd,
+    herramientas: ["Node", "Express", "MongoDB", "SQL"],
+  },
+  {
+    title: "Herramientas",
+    icon: Tools,
+    herramientas: ["Git", "Github", "VSCode", "Linux", "Docker", "Postman"],
+  },
+];
+---
+
+<article class="grid grid-cols-3">
+  {
+    skills.map((skill) => (
+      <div class="mx-auto ">
+        <div class="flex flex-col items-center">
+          <skill.icon class="size-10 text-tertiary" />
+        </div>
+        <h3 class="text-primary ">{skill.title}</h3>
+      </div>
+    ))
+  }
+</article>
