@@ -1,5 +1,5 @@
 ---
-import Badges from "./Badges.astro";
+import Social from "./Social.astro";
 import Github from "@/assets/icons/Github.astro";
 import Linkedin from "@/assets/icons/Linkedin.astro";
 import Mail from "@/assets/icons/Mail.astro";
@@ -7,7 +7,7 @@ import Mail from "@/assets/icons/Mail.astro";
 const links = {
   Github: "https://github.com/OssDevp",
   Linkedin: "https://www.linkedin.com/in/osvaldobareirolugo/",
-  Mail: "",
+  Mail: "mailto:osvaldojavierb4@gmail.com",
 };
 ---
 
@@ -19,23 +19,23 @@ const links = {
   </div>
   <div class="text-xl mb-6">
     <p class="text-tertiary">
-      Me apasiona el desarrollo de software, tanto en el frontend como en el
-      backend, y disfruto explorando nuevas tecnologías y herramientas que me
-      permitan crecer como desarrollador.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus at alias
+      sit saepe nemo, explicabo perferendis dolor ipsam commodi sint ipsum quae
+      accusamus perspiciatis vero dicta, laboriosam eveniet optio fugit!
     </p>
   </div>
-  <nav>
-    <Badges href={links.Github}>
-      <Github class="size-5" />
+  <nav class="">
+    <Social href={links.Github}>
+      <Github class="size-4" />
       Github
-    </Badges>
-    <Badges href={links.Linkedin}>
-      <Linkedin class="size-5" />
+    </Social>
+    <Social href={links.Linkedin}>
+      <Linkedin class="size-4" />
       Linkedin
-    </Badges>
-    <Badges href={links.Mail}>
-      <Mail class="size-5" />
-      osvaldojavierb4@gmail.com
-    </Badges>
+    </Social>
+    <Social href={links.Mail}>
+      <Mail class="size-4" />
+      Contáctame
+    </Social>
   </nav>
 </div>

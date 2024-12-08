@@ -2,42 +2,121 @@
 import Tools from "@/assets/icons/Tools.astro";
 import FrontEnd from "@/assets/icons/FrontEnd.astro";
 import BackEnd from "@/assets/icons/BackEnd.astro";
+import Badges from "./Badges.astro";
+import React from "@/assets/icons/React.astro";
+import Typescript from "@/assets/icons/Typescript.astro";
+import Javascript from "@/assets/icons/Javascript.astro";
+import Tailwind from "@/assets/icons/Tailwind.astro";
+import AstroLogo from "@/assets/icons/AstroLogo.astro";
+import Html from "@/assets/icons/Html.astro";
+import Css from "@/assets/icons/Css.astro";
+import Node from "@/assets/icons/Node.astro";
+import Express from "@/assets/icons/Express.astro";
+import MongoDB from "@/assets/icons/MongoDB.astro";
+import SQL from "@/assets/icons/SQL.astro";
+import Github from "@/assets/icons/Github.astro";
+import Postman from "@/assets/icons/Postman.astro";
+import Linux from "@/assets/icons/Linux.astro";
+import VSCode from "@/assets/icons/VSCode.astro";
 
 const skills = [
   {
     title: "Frontend",
     icon: FrontEnd,
-    herramientas: [
-      "React",
-      "Typescript",
-      "Astro",
-      "Javascript",
-      "HTML",
-      "CSS",
-      "Tailwind",
+    tools: [
+      {
+        icon: React,
+        title: "React",
+      },
+      {
+        icon: Typescript,
+        title: "Typescript",
+      },
+      {
+        icon: Javascript,
+        title: "Javascript",
+      },
+      {
+        icon: Tailwind,
+        title: "Tailwind",
+      },
+      {
+        icon: AstroLogo,
+        title: "Astro",
+      },
+      {
+        icon: Html,
+        title: "Html",
+      },
+      {
+        icon: Css,
+        title: "Css",
+      },
     ],
   },
   {
     title: "Backend",
     icon: BackEnd,
-    herramientas: ["Node", "Express", "MongoDB", "SQL"],
+    tools: [
+      {
+        icon: Node,
+        title: "Node",
+      },
+      {
+        icon: Express,
+        title: "Express",
+      },
+      {
+        icon: MongoDB,
+        title: "MongoDB",
+      },
+      {
+        icon: SQL,
+        title: "SQL",
+      },
+    ],
   },
   {
     title: "Herramientas",
     icon: Tools,
-    herramientas: ["Git", "Github", "VSCode", "Linux", "Docker", "Postman"],
+    tools: [
+      {
+        icon: Github,
+        title: "Github",
+      },
+      {
+        icon: Postman,
+        title: "Postman",
+      },
+      {
+        icon: Linux,
+        title: "Linux",
+      },
+      {
+        icon: VSCode,
+        title: "VSCode",
+      },
+    ],
   },
 ];
 ---
 
-<article class="grid grid-cols-3">
+<article class="grid grid-cols-1 md:grid-cols-3 gap-4">
   {
     skills.map((skill) => (
-      <div class="mx-auto ">
+      <div class="p-4 flex flex-col items-center justify-start rounded-md">
         <div class="flex flex-col items-center">
           <skill.icon class="size-10 text-tertiary" />
         </div>
-        <h3 class="text-primary ">{skill.title}</h3>
+        <h3 class="text-primary text-xl">{skill.title}</h3>
+        <div class="flex flex-wrap gap-2 my-2 justify-center">
+          {skill.tools.map((tool) => (
+            <Badges>
+              <tool.icon class="size-3" />
+              {tool.title}
+            </Badges>
+          ))}
+        </div>
       </div>
     ))
   }

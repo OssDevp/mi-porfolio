@@ -29,31 +29,31 @@ window.addEventListener("scroll", () => {
   console.log( )
   if (nav === null) return;
   if (window.scrollY > 10) {
-    nav.classList.add("fixed", "bg-indigo-900", "top-2", "border","border-primary", "shadow-md", "py-2", "px-5", "rounded-md",  "[backdrop-filter]", "backdrop-blur-lg", "bg-transparent");
+    nav.classList.add("fixed", "top-2", "border","border-primary", "shadow-md", "rounded-md",  "[backdrop-filter]", "backdrop-blur-lg", "bg-transparent");
   } else {
-    nav.classList.remove("fixed", "top-2", "border", "border-primary", "shadow-md", "py-2", "px-5", "rounded-md",  "[backdrop-filter]", "backdrop-blur-lg", "transparency-5");
+    nav.classList.remove("fixed", "top-2", "border", "border-primary", "shadow-md", "rounded-md",  "[backdrop-filter]", "backdrop-blur-lg", "transparency-5");
   }
 });
 
-// document.addEventListener('scroll', function() {
-//   const sections = document.querySelectorAll('section[id]') as NodeListOf<HTMLElement>
-//   const navLinks = document.querySelectorAll('nav a') as NodeListOf<HTMLElement>
-  
-//   let actual = '';
-//   sections.forEach( section => {
-//       const sectionTop = section.offsetTop
-//       const sectionHeight = section.clientHeight
-//       if(window.scrollY >= sectionTop - sectionHeight ) {
-//         console.log(window.scrollY)
-//         actual = section.id
-//       }
-//   })
+ document.addEventListener('scroll', function() {
+   const sections = document.querySelectorAll('section[id]') as NodeListOf<HTMLElement>
+   const navLinks = document.querySelectorAll('nav a') as NodeListOf<HTMLElement>
 
-//   navLinks.forEach(link => {
-//       link.classList.remove('text-secondary', "font-bold")
-//       if(link.getAttribute('href') === '#' + actual) {
-//           link.classList.add('text-secondary', 'font-bold')
-//       }
-//   })
-// })
+   let actual = '';
+   sections.forEach( section => {
+       const sectionTop = section.offsetTop
+       const sectionHeight = section.clientHeight
+       if(window.scrollY >= sectionTop - sectionHeight ) {
+         console.log(window.scrollY)
+         actual = section.id
+       }
+   })
+
+   navLinks.forEach(link => {
+       link.classList.remove('text-secondary', "font-bold")
+       if(link.getAttribute('href') === '#' + actual) {
+           link.classList.add('text-secondary', 'font-bold')
+       }
+   })
+ })
 </script>
