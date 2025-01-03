@@ -1,8 +1,8 @@
 ---
-import Social from "./Social.astro";
 import Github from "@/assets/icons/Github.astro";
 import Linkedin from "@/assets/icons/Linkedin.astro";
 import Mail from "@/assets/icons/Mail.astro";
+import Button from "./Button.astro";
 
 const links = {
   Github: "https://github.com/OssDevp",
@@ -12,30 +12,32 @@ const links = {
 ---
 
 <div class="grid grid-row-col">
-  <div class="flex flex-col justify-end">
-    <h1 class="text-4xl text-primary font-bold mb-5">
-      Hey, soy <span class="text-secondary">Osvaldo Bareiro</span>
-    </h1>
+  <div class="flex flex-col gap-5 justify-end">
+    <div class="flex flex-col justify-end">
+      <h1 class="text-4xl text-primary font-bold">
+        Hey, soy <span class="text-secondary">Osvaldo Bareiro</span>
+      </h1>
+    </div>
+    <div class="text-xl text-tertiary">
+      <p>
+        Durante mucho tiempo me preguntaba cómo podía aportar al mundo, y la
+        forma que encontré es a través de la tecnología.
+      </p>
+      <p>Creando software responsables y de calidad.</p>
+    </div>
   </div>
-  <div class="text-xl mb-6">
-    <p class="text-tertiary">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus at alias
-      sit saepe nemo, explicabo perferendis dolor ipsam commodi sint ipsum quae
-      accusamus perspiciatis vero dicta, laboriosam eveniet optio fugit!
-    </p>
-  </div>
-  <nav class="">
-    <Social href={links.Github}>
+  <nav class="flex flex-wrap gap-1 md:block lg:block mt-5">
+    <Button href={links.Github}>
       <Github class="size-4" />
       Github
-    </Social>
-    <Social href={links.Linkedin}>
+    </Button>
+    <Button href={links.Linkedin}>
       <Linkedin class="size-4" />
       Linkedin
-    </Social>
-    <Social href={links.Mail}>
+    </Button>
+    <Button href={links.Mail}>
       <Mail class="size-4" />
       Contáctame
-    </Social>
+    </Button>
   </nav>
 </div>

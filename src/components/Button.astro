@@ -7,22 +7,9 @@ const { href } = Astro.props;
 ---
 
 <a
-  class="text-primary bg-gray-700 hover:bg-gray-800 hover:scale-105 border border-tertiary font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-300"
+  class="text-primary bg-gray-700 hover:bg-gray-800 hover:scale-105 border border-tertiary font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-300 gap-2"
   href={href}
+  target="_blank"
 >
   <slot />
-  <svg
-    class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-    aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 14 10"
-  >
-    <path
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-  </svg>
 </a>

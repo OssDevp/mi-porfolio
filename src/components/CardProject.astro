@@ -5,28 +5,37 @@ import Node from "@/assets/icons/Node.astro";
 import Express from "@/assets/icons/Express.astro";
 import MongoDB from "@/assets/icons/MongoDB.astro";
 import Button from "./Button.astro";
+import AstroLogo from "@/assets/icons/AstroLogo.astro";
+import Tailwind from "@/assets/icons/Tailwind.astro";
+import Flecha from "@/assets/icons/Flecha.astro";
 
 const Projects = [
   {
-    title: "Proyecto 1",
-    href: "/proyecto.png",
+    title: "Sitio Web Uptask",
+    href: "/inicio.png",
+    url_code: "https://github.com/OssDevp/uptask",
+    url_project: "",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc.",
+      "Este proyecto es un sitio web para administrar tareas, con autenticación de usuarios y base de datos.",
     icons: [Typescript, React, Node, Express, MongoDB],
   },
   {
-    title: "Proyecto 2",
-    href: "/proyecto.png",
+    title: "Gestion de Pacientes",
+    href: "/home.png",
+    url_code: "https://github.com/OssDevp/avp_software_web",
+    url_project: "",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc.",
+      "Gestiona pacientes para veterinarios, con autenticación de usuarios y base de datos.",
     icons: [Typescript, React, Node, Express, MongoDB],
   },
   {
-    title: "Proyecto 3",
+    title: "Porfolio Personal",
     href: "/proyecto.png",
+    url_code: "https://github.com/OssDevp/mi-porfolio",
+    url_project: "",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc.",
-    icons: [Typescript, React, Node, Express, MongoDB],
+      "Porfolio personal desarrollado con tecnologías modernas y responsive design.",
+    icons: [AstroLogo, Tailwind],
   },
 ];
 ---
@@ -39,12 +48,20 @@ const Projects = [
     Projects.map((project) => (
       <article class="relative rounded-md border border-tertiary p-4">
         <div class="absolute rounded-md top-0 left-0 w-full h-full bg-black/50 flex flex-col gap-5 justify-center items-center opacity-0 transition-all hover:opacity-100 duration-200">
-          <Button href="#">Ver Proyecto</Button>
-          <Button href="#">Ver Código</Button>
+          {project.url_project && (
+            <Button href={project.url_project}>
+              Ver Proyecto
+              <Flecha />
+            </Button>
+          )}
+          <Button href={project.url_code}>
+            Ver Código
+            <Flecha />
+          </Button>
         </div>
         <div class="min-w-40 overflow-hidden rounded-md aspect-auto">
           <img
-            class="object-cover object-center"
+            class="object-cover object-center aspect-video"
             src={project.href}
             alt={project.title}
           />
